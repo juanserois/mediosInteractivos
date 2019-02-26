@@ -79,14 +79,29 @@ function spray(x, y) { //funcion que dibuja tipo spay
   b = Math.random() * 2 + 1;
   for (m = 0; m < 20; m++) {
     ellipse(x + a * b, y + b * 2, a)
-    ellipse(x + b * a / 1.2, y - a -3 * 2.3, b)
-    ellipse(x - a * a / 1.2, y + b -3* 2, a)
-    ellipse(x - b * b / 1.3, y - a -3* 3, b)
-    ellipse(x + a * b+2, y + b * 2, a)
-    ellipse(x + b * a+3 / 1.2, y - a -2* 2.3, b)
-    ellipse(x - a * a+4 / 1.2, y + b -3* 2, a)
-    ellipse(x - b * b+4 / 1.3, y - a -5* 3, b)
+    ellipse(x + b * a / 1.2, y - a - 3 * 2.3, b)
+    ellipse(x - a * a / 1.2, y + b - 3 * 2, a)
+    ellipse(x - b * b / 1.3, y - a - 3 * 3, b)
+    ellipse(x + a * b + 2, y + b * 2, a)
+    ellipse(x + b * a + 3 / 1.2, y - a - 2 * 2.3, b)
+    ellipse(x - a * a + 4 / 1.2, y + b - 3 * 2, a)
+    ellipse(x - b * b + 4 / 1.3, y - a - 5 * 3, b)
   }
+}
+
+function lineas(x, y) {
+  strokeWeight(1);
+  line(x - 20, y - 20, x + 20, y - 20);
+  line(x - 20, y - 10, x + 20, y - 10);
+  line(x - 20, y, x + 20, y);
+  line(x - 20, y + 10, x + 20, y + 10);
+  line(x - 20, y + 20, x + 20, y + 20);
+}
+
+function triangulos(x, y) {
+  triangle(x, y - 20, x - 4, y - 15, x + 4, y - 15);
+  triangle(x - 20, y, x - 24, y + 5, x + -16, y + 5);
+  triangle(x + 20, y, x + 16, y + 5, x + 24, y + 5);
 }
 
 function draw() {
@@ -134,6 +149,8 @@ function draw() {
     spray(680, 50);
     b = !b;
   }
+  lineas(730, 50);
+  triangulos(800, 50);
 
   noStroke();
   if (col == 1) { //estas líneas seleccionan el color apropiado dependiendo del valor de la variable
@@ -198,11 +215,18 @@ function draw() {
     if (mouseX <= 645 && mouseX >= 595 && mouseY >= 30 && mouseY <= 70) {
       herr = 7;
     }
-    
+
     if (mouseX <= 680 && mouseX >= 640 && mouseY >= 30 && mouseY <= 70) {
       herr = 8;
     }
 
+    if (mouseX <= 750 && mouseX >= 710 && mouseY >= 30 && mouseY <= 70) {
+      herr = 9;
+    }
+
+    if (mouseX <= 820 && mouseX >= 780 && mouseY >= 30 && mouseY <= 70) {
+      herr = 10;
+    }
 
 
     if (mouseX <= 60 && mouseX >= 20 && mouseY >= 70 && mouseY <= 110) {
@@ -260,12 +284,16 @@ function draw() {
     } else if (herr == 7) {
       ellipse(mouseX, mouseY, 50, 50);
     } else if (herr == 8) {
-      spray(mouseX, mouseY, 50, 50);
+      spray(mouseX, mouseY);
+    } else if (herr == 9) {
+      lineas(mouseX, mouseY);
+    } else if (herr == 10) {
+      triangulos(mouseX, mouseY);
     }
 
     if (mouseX <= 60 && mouseX >= 20 && mouseY >= 570 && mouseY <= 610) {
       background(255); // borra el dibujo pintando el fondo de nuevo cuando se hace click en el boton de la X roja
-      b=true;
+      b = true;
     }
   }
 
