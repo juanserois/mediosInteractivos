@@ -14,9 +14,9 @@ inicio = true; //variables que se usan para controlar estado
 fin1 = false; //del juego y las pantallas de este
 fin2 = false;
 
-function preload() {
+/*function preload() {
   font = loadFont("./fonts/ARCADE.ttf");
-}
+}*/
 
 function setup() {
   createCanvas(windowWidth, windowHeight); //se crea el canvas con el tamaño del navegador
@@ -70,7 +70,7 @@ function inicial() { //esta funcion maneja la pantalla de inicio
   background(10, 10, 80); //fondo azul oscuro
   fill(255); //blanco para el texto
   textSize(80); //tamañp de texto
-  textFont(font); //fuente del texto
+  textFont('Georgia'); //fuente del texto
   textAlign(CENTER, CENTER);
   text('Ghost Chase', width / 2, height / 2 ); //texto en posicion relativa al tamaño del canvas
   textSize(40); //tamaño del segundo texto
@@ -88,7 +88,7 @@ function final1() { //esta funcion maneja la pantalla de final si gana el jugado
   background(0, 255, 255) //fondo del color del jugador 1 
     fill(255); //color del texto
   textSize(50); //tamaño del texto
-  textFont(font); //fuente del texto
+  textFont('Georgia'); //fuente del texto
   textAlign(CENTER, CENTER);
   text('Ha ganado el jugador Cyan', width / 2, height / 2 ); //texto en posicion relativa al tamaño del canvas
 }
@@ -97,7 +97,7 @@ function final2() { //esta funcion maneja la pantalla de final si gana el jugado
   background(255, 0, 255) //fondo del color del jugador 2
     fill(255); //color del texto
   textSize(50); //tamaño del texto
-  textFont(font); //fuente del texto
+  textFont('Georgia'); //fuente del texto
   textAlign(CENTER, CENTER);
   text('Ha ganado el jugador Magenta', width / 2, height / 2 ); //texto en posicion relativa al tamaño del canvas
 }
