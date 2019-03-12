@@ -5,7 +5,7 @@ hora = 0;
 minuto = 0;
 segundo = 0;
 
-xanalog = 0;//variables auxiliares para el inicio del programa
+xanalog = 0; //variables auxiliares para el inicio del programa
 yanalog = 0;
 
 cont1 = 0; //contador 1 cuenta cada vez que pasa un segundo
@@ -103,6 +103,10 @@ function setup() {
   minuto = map(minuto, 0, 60, 0, width);
   segundo = map(segundo, 0, 60, 0, width);
 
+  contadorPuntos = 1; //contador de los puntos que lleva la persona
+  contadorSegundos = 0; //contador de segundos transcurridos
+  vel = 1; //velocidad del reloj
+
   cont1 = cont2 = second(); //se inicializan los contadores con el segubdo actula
 }
 
@@ -185,7 +189,13 @@ function draw() {
       }
     }
 
-    vel = (contadorSegundos/3) / (contadorPuntos * 3) //secalcula la velocidad a la que va el reloj con los segundos transcurridos y los puntos obtenidos
+    vel = (contadorSegundos /3) / (contadorPuntos * 3) //secalcula la velocidad a la que va el reloj con los segundos transcurridos y los puntos obtenidos
 
   }
+  
+   if (keyIsPressed) { //si se preciona la barra espaciadora se reinicia
+      if (keyCode == 32)
+          setup();
+          }
+  
 }
