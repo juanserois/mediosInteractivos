@@ -185,7 +185,7 @@ function draw() {
       }
     }
 
-    vel = contadorSegundos / (contadorPuntos * 3) //secalcula la velocidad a la que va el reloj con los segundos transcurridos y los puntos obtenidos
+    vel = (contadorSegundos/3) / (contadorPuntos * 3) //secalcula la velocidad a la que va el reloj con los segundos transcurridos y los puntos obtenidos
 
   }
 }
