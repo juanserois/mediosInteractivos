@@ -50,7 +50,7 @@ function setup() { //crea la ventana e inicializa los valores necesarios
 }
 
 function reset (){ //resetea los valores para que no se cambien todas las canniones
-   rate = 1;
+  rate = 1;
   pan = 0;
   vol = 0.5;
 }
@@ -59,7 +59,7 @@ function reset (){ //resetea los valores para que no se cambien todas las cannio
 function keyPressed() { //todo se maneja con el teclado 
   if (keyCode == 49) { // 1 selecciona la primera cancion
     cancion = nights;
-    reset();
+    reset(); // resetea valores para que no se modifiquen en otras canciones
   }
   if (keyCode == 50) { // 2 selecciona la segunda cancion
     cancion = withoutYou;
@@ -184,5 +184,5 @@ function draw() {
   dur = cancion.duration(); // calcula la duracion total de la cancion seleccionada
   
   
-  image(controlesImg, 50, 340, 1200, 300);
+  image(controlesImg, 50, 340, 1200, 300); //imagen que muestra los controles del programa
 }
