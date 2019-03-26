@@ -71,7 +71,7 @@ function setup() {
   }
 }
 
-function mosquito(x, y) {
+function mosquito(x, y) { //funcion para dibujar el mosquito 
   fill(204);
   strokeWeight(1)
   ellipse(x, y + 6, 3, 18);
@@ -84,7 +84,7 @@ function mosquito(x, y) {
   bezier(x + 1.5, y, x + 40, y - 3, x + 20, y + 15, x + 1.5, y);
 }
 
-function bee(x, y) {
+function bee(x, y) { //funcion para dibujar las abejas 
   fill(220, 200, 0);
   stroke(0);
   ellipse(x, y, 12, 12);
@@ -93,7 +93,7 @@ function bee(x, y) {
   fill(255);
 
 
-  strokeWeight(4);
+  strokeWeight(4); 
   bezier(x - 3, y + 6, x - 3, y + 4, x + 3, y + 4, x + 3, y + 6);
   bezier(x - 3, y + 13, x - 3, y + 13, x + 3, y + 13, x + 3, y + 13);
   bezier(x - 5, y + 22, x - 3, y + 23, x + 3, y + 23, x + 5, y + 22);
@@ -143,24 +143,24 @@ function nave(x, y) { //función que crea las naves alienigenas
 function draw() {
   background(220);
   fill (100);
-  rect(0, 400, width, height);
+  rect(0, 400, width, height); // piso
 
 
-  for (var l = 0; l < cantnave; l++) {
-    nave(posXnave[l], posYnave[l]);
+  for (var l = 0; l < cantnave; l++) {// for de las naves
+    nave(posXnave[l], posYnave[l]); // se pintan las naves en sus posiciones
 
-    posXnave[l] += (velXnave[l] * random(1, 2));
+    posXnave[l] += (velXnave[l] * random(1, 2)); //las naves se mueven con la velocidad de cada nave y un modificador random
 
     posYnave[l] += (velYnave[l] * random(1, 3));
 
-    if (posXnave[l] > width)
+    if (posXnave[l] > width) // si se salen del canva salen del la do opuesto
       posXnave[l] = -15;
     if (posXnave[l] < -15)
       posXnave[l] = width;
 
-    if (posYnave[l] < 45) {
+    if (posYnave[l] < 45) { //cuado llegan arriba cambia la velocidad
       if (l % 2 == 0)
-      velXnave[l] *= -1;
+      velXnave[l] *= -1; //la velocidad en X cambia solo en los pares
       velYnave[l] *= -1;
     }
     if (posYnave[l] > 380) {
@@ -170,13 +170,13 @@ function draw() {
   }
 
 
-  for (var i = 0; i < cantmosquito; i++) {
-    mosquito(posXmosquito[i], posYmosquito[i]);
+  for (var i = 0; i < cantmosquito; i++) { //for que pinta los mosquitos 
+    mosquito(posXmosquito[i], posYmosquito[i]); //dibuja cada mosquito en su posicion
 
-    posXmosquito[i] += random(-2, 2);
+    posXmosquito[i] += random(-2, 2); // los mosquitos vibran
     posYmosquito[i] += random(-2, 2);
 
-    if (i % 3 == 0)
+    if (i % 3 == 0) //dependiendo del numero de cada uno tienen un comportamiento diferente 
       posXmosquito[i] += random(3);
     if (i % 4 == 0)
       posYmosquito[i] += random(3);
@@ -185,7 +185,7 @@ function draw() {
     if (i % 6 == 0)
       posXmosquito[i] += random(-3, 0);
 
-    if (posXmosquito[i] > width)
+    if (posXmosquito[i] > width) //si se salen por un borde reaparecen del lado contrario 
       posXmosquito[i] = -15;
     if (posXmosquito[i] < -15)
       posXmosquito[i] = width;
@@ -196,17 +196,17 @@ function draw() {
   }
 
 
-  for (var j = 0; j < cantbee; j++) {
-    bee(posXbee[j], posYbee[j], 1);
+  for (var j = 0; j < cantbee; j++) { // for que dibuja las abejas
+    bee(posXbee[j], posYbee[j]); //se dibuja cada una en su pocicion
 
-    posXbee[j] += random(-1, 1);
+    posXbee[j] += random(-1, 1); //las abejas vibran
     posYbee[j] += random(-1, 1);
     posXbee[j] += random(-1, 1);
     posYbee[j] += random(-1, 1);
 
-    if (j % 2 == 0)
+    if (j % 2 == 0) // las pares van a la derecha
       posXbee[j] += random(3);
-    else
+    else //las imapres van arriba
       posYbee[j] += random(-3);
 
     if (posXbee[j] > width)
@@ -219,43 +219,43 @@ function draw() {
       posYbee[j] = height;
   }
 
-  for (var k = 0; k < cantnube; k++) {
-    nube(posXnube[k], posYnube[k]);
+  for (var k = 0; k < cantnube; k++) { // for que dibuja las nubes
+    nube(posXnube[k], posYnube[k]); // las nubes se dibujan en su posicion
+ 
+    posXnube[k] += 2; //todas las nubes van a la derecha
 
-    posXnube[k] += 2;
+    posYnube[k] += velNube[k]; // verticalmente depende de la velocidad
 
-    posYnube[k] += velNube[k];
-
-    if (posXnube[k] > width)
+    if (posXnube[k] > width)  // si se salen horizontalmente del canva aparecen del lado contrario
       posXnube[k] = -15;
     if (posXnube[k] < -15)
       posXnube[k] = width;
-    if (posYnube[k] < 35)
+    if (posYnube[k] < 35) //si si chochan con los limites de piso y canva se canbia la velocidad
       velNube[k] *= -1;
     if (posYnube[k] > 380)
       velNube[k] *= -1;
   }
   
-  for (var m = 0; m < cantletras; m++) {
-    fill(col[m]);
-    if (frameCount %5 == 0)
-    letras[m] = String.fromCharCode(random(97,123));
-    text(letras[m], posXletras[m], posYletras[m]);
+  for (var m = 0; m < cantletras; m++) { // for de las letras
+    fill(col[m]); // se asigna el color de cada letra del arreglo
+    if (frameCount %5 == 0) //cada 5 cuadros 
+    letras[m] = String.fromCharCode(random(97,123)); //se crea una nueva letra convitiendo el número a char de 97 a 122 por la tabla ascii
+    text(letras[m], posXletras[m], posYletras[m]); //dibuja cada letra en su posicion
     
-    if (frameCount % 3 == 0)
-    if (m % 2 == 0){
-      posXletras[m] = random(width);
+    if (frameCount % 3 == 0) //cada 3 cuadros 
+    if (m % 2 == 0){ // si la letra es par 
+      posXletras[m] = random(width); //se reposiciona a un lugar random
       posYletras[m] = random(height);
     }
     
-    if (frameCount % 5 == 0)
-    if (m % 3 == 0){
-      posXletras[m] = random(width);
+    if (frameCount % 5 == 0) // cada 5 cuadros
+    if (m % 3 == 0){ //si la posicion dela letra es divisible en 3 
+      posXletras[m] = random(width); // se reposiciona a un lugar random
       posYletras[m] = random(height);
     }
       
     
-    if (posXletras[m] > width)
+    if (posXletras[m] > width) // si se llegan a salir del canvas vuelven a salir por el lado contrario
       posXletras[m] = -15;
     if (posXletras[m] < -15)
       posXletras[m] = width;
