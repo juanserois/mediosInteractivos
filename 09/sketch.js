@@ -15,7 +15,7 @@ var cantEstrellas = 20
 
 //carga la imagen de fondo
 function preload() {
-  fondo = loadImage('/fondo.jpg');
+  fondo = loadImage('/assets/fondo.jpg');
 }
 
 function setup() {
