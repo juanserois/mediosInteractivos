@@ -103,7 +103,7 @@ function draw() {
     textSize(22);
     text("Cuando pensamos en los ejércitos más grandes y poderosos del mundo \n probablemente pensemos en países como: \n Estados Unidos, China o incluso Brasil en el caso de Latinoamérica. \n Sin embargo sorprende ver que en el ejercito colombiano \n haya un porcentage mayor de la población del país \n y se use un mayor porcentaje del PIB del país para financiarlo.", width / 2, height / 2);
     textSize(25);
-    text("Toca en cualquier parte para continuar", width / 2, height - 50);
+    text("Toca en cualquier parte para continuar", width / 2, height - 30);
   }
 
 
@@ -117,7 +117,7 @@ function draw() {
     noStroke();
     text("Desplazar el mundo a una bandera para seleccionar un país \n Rotar el iPad  para ver diferente información", width / 2, height / 2 + 150);
     textSize(25);
-    text("Toca en cualquier parte para continuar", width / 2, height - 50);
+    text("Toca en cualquier parte para continuar", width / 2, height - 30);
   }
 
 
@@ -288,7 +288,7 @@ function draw() {
     textSize(22);
     text("Si Colombia tuviera la misma poblacion de " + x + " tendría: " + y + " soldados.  \n Es decir que tendría un ejército " + z + " veces más grande que " + x + "\n \n" + "Si Colombia tuviera la misma economía de " + x + " tendría: " + m + " millones de dólares. \n Es decir que tendría un ejército " + n + " veces tan rico como el ejército de " + x, width / 2, height / 2);
     textSize(25);
-    text("Toca en la flecha para seleccionar otro país \n o en el icono de la esquina superior derecha para reiniciar", width / 2, height - 50);
+    text("Toca en la flecha para seleccionar otro país \n o en el icono de la esquina superior derecha para reiniciar", width / 2, height - 30);
     
     if (mouseX < 90 && mouseY > height - 100){
       estado = INTERACCION;
