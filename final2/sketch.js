@@ -176,7 +176,7 @@ function draw() {
 
     }
 
-    if (rotationX > 30 && rotationY > -80 && rotationY < 80) {
+   else if (rotationX > 30 && rotationY > -80 && rotationY < 80) {
 
       if (dist(mouseX, mouseY, xColombia, yColombia) < 120) {
         cantidad = tabla.getNum(23, 3);
@@ -203,7 +203,7 @@ function draw() {
       text("Gasto percentual del PIB \n usado para  financiar \n las fuerzas armadas: " + cantidad + " %", width / 2, height / 2)
     }
 
-    if (rotationX < -30 && rotationY > -80 && rotationY < 80) {
+   else if (rotationX < -30 && rotationY > -80 && rotationY < 80) {
 
       if (dist(mouseX, mouseY, xColombia, yColombia) < 120) {
         cantidad = tabla.getNum(22, 4);
@@ -234,9 +234,9 @@ function draw() {
       }
       textSize(22);
 
-      text("Gasto total de recursos para financiar \n el ejercito: " + cantidad + " millones de dolares ", width / 2, height / 2)
-    }
-
+      text("Gasto total de recursos para financiar \n el ejercito: " + cantidad + " millones de dolares ", width / 2, height / 2);
+    } else
+      text("Ponga el iPad horizontal perpendicular al piso", width / 2, height / 2);
 
     if (mouseX > width - 90 && mouseY > height - 100)
       estado = COMPARACION;
@@ -249,57 +249,57 @@ function draw() {
 
     image(left, 10, height - 90, 80, 80);
     image(restart, width - 90, 10, 80, 80);
-     var x = "";
+    var x = "";
     var y = 0;
     var z = 0;
     var m = 0;
     var n = 0;
-    if (pais == COLOMBIA){
+    if (pais == COLOMBIA) {
       x = "Colombia"
       y = 481100;
       z = 0;
       m = 8224;
       n = 0;
     }
-    if (pais == USA){
-       x = "USA"
+    if (pais == USA) {
+      x = "USA"
       y = 3487400;
       z = 2.58;
       m = 571616.84
       n = 0.95;
     }
-    if (pais == BRAZIL){
-       x = "Brazil"
+    if (pais == BRAZIL) {
+      x = "Brazil"
       y = 2215400;
       z = 3.03;
       m = 96754.85;
       n = 2.27;
 
     }
-    if (pais == CHINA){
-       x = "China"
-    y = 14787000;
+    if (pais == CHINA) {
+      x = "China"
+      y = 14787000;
       z = 5.48;
       m = 657156.67;
       n = 1.59
-      
+
     }
 
     textSize(22);
     text("Si Colombia tuviera la misma poblacion de " + x + " tendría: " + y + " soldados.  \n Es decir que tendría un ejército " + z + " veces más grande que " + x + "\n \n" + "Si Colombia tuviera la misma economía de " + x + " tendría: " + m + " millones de dólares. \n Es decir que tendría un ejército " + n + " veces tan rico como el ejército de " + x, width / 2, height / 2);
     textSize(25);
     text("Toca en la flecha para seleccionar otro país \n o en el icono de la esquina superior derecha para reiniciar", width / 2, height - 30);
-    
-    if (mouseX < 90 && mouseY > height - 100){
+
+    if (mouseX < 90 && mouseY > height - 100) {
       estado = INTERACCION;
       return false;
     }
-    
-     if (mouseX > width - 90 && mouseY < 100 ){
+
+    if (mouseX > width - 90 && mouseY < 100) {
       estado = INTRODUCCION;
-       return false;
-     }
+      return false;
+    }
 
   }
 
-} 
+}
