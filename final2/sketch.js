@@ -239,7 +239,7 @@ function draw() {
     } else{
       fill(255,0,0);
       textSize(20);
-      text("Ponga el iPad horizontal perpendicular al piso", width / 2, height / 2);
+      text("Tome el ipad frente a usted de manera horizontal \n inclinelo hacia los lados para ver diferente información", width / 2, height / 2);
       
     }
 
