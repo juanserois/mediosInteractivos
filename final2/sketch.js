@@ -285,7 +285,7 @@ function draw() {
       
     }
 
-    textSize(24);
+    textSize(22);
     text("Si Colombia tuviera la misma poblacion de " + x + " tendría: " + y + " soldados.  \n Es decir que tendría un ejército " + z + " veces más grande que " + x + "\n \n" + "Si Colombia tuviera la misma economía de " + x + " tendría: " + m + " millones de dólares. \n Es decir que tendría un ejército " + n + " veces tan rico como el ejército de " + x, width / 2, height / 2);
     
     if (mouseX < 90 && mouseY > height - 100){
