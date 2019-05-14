@@ -135,7 +135,7 @@ function draw() {
     image(brazil, xBrazil, yBrazil);
 
     textSize(25);
-    text("Toca en la flecha para continuar", width / 2, height - 50);
+    text("Toca en la flecha para continuar", width / 2, height - 30);
 
     image(mundo, mouseX - 50, mouseY - 50, 100, 100);
 
