@@ -170,7 +170,7 @@ function draw() {
         if (i > 19)
           image(soldado, 235 + (i - 20) * 50, (height / 2 + 100), 50, 50)
       }
-      textSize(15);
+      textSize(18);
 
       text("Cada soldado representa 100´000 tropas", width / 2, 200)
 
@@ -199,7 +199,7 @@ function draw() {
         cantidad = (cantidad /= 100000000000000);
         pais = BRAZIL;
       }
-      textSize(20);
+      textSize(22);
       text("Gasto percentual del PIB \n usado para  financiar \n las fuerzas armadas: " + cantidad + " %", width / 2, height / 2)
     }
 
@@ -232,7 +232,7 @@ function draw() {
         pais = BRAZIL;
 
       }
-      textSize(20);
+      textSize(22);
 
       text("Gasto total de recursos \n para financiar el ejercito: " + cantidad + " millones de dolares ", width / 2, height / 2)
     }
@@ -285,7 +285,8 @@ function draw() {
       
     }
 
-    text("Si Colombia tuviera la misma poblacion de " + x + " tendría: " + y + " soldados. \n \n Es decir que tendría un ejército " + z + " veces más grande que " + x + "\n" + "Si Colombia tuviera la misma economía de " + x + " tendría: " + m + " millones de dólares. \n \n Es decir que tendría un ejército " + n + " veces tan rico como el ejército de " + x, width / 2, height / 2);
+    textSize(24);
+    text("Si Colombia tuviera la misma poblacion de " + x + " tendría: " + y + " soldados.  \n Es decir que tendría un ejército " + z + " veces más grande que " + x + "\n \n" + "Si Colombia tuviera la misma economía de " + x + " tendría: " + m + " millones de dólares. \n Es decir que tendría un ejército " + n + " veces tan rico como el ejército de " + x, width / 2, height / 2);
     
     if (mouseX < 90 && mouseY > height - 100){
       estado = INTERACCION;
