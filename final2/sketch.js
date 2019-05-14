@@ -287,8 +287,8 @@ function draw() {
 
     textSize(22);
     text("Si Colombia tuviera la misma poblacion de " + x + " tendría: " + y + " soldados.  \n Es decir que tendría un ejército " + z + " veces más grande que " + x + "\n \n" + "Si Colombia tuviera la misma economía de " + x + " tendría: " + m + " millones de dólares. \n Es decir que tendría un ejército " + n + " veces tan rico como el ejército de " + x, width / 2, height / 2);
-    textSize(30);
-    text("Toca en la flecha para seleccionar otro país \n o en el icono de la esquina superior derecha para reiniciar", width / 2, height - 20);
+    textSize(25);
+    text("Toca en la flecha para seleccionar otro país \n o en el icono de la esquina superior derecha para reiniciar", width / 2, height - 50);
     
     if (mouseX < 90 && mouseY > height - 100){
       estado = INTERACCION;
