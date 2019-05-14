@@ -90,6 +90,7 @@ function setup() {
 }
 
 function draw() {
+  fill(255);
   if (estado == INTRODUCCION) {
     image(map, 0, 0, width, height);
     background(0, 0, 0, 150);
@@ -235,8 +236,12 @@ function draw() {
       textSize(22);
 
       text("Gasto total de recursos para financiar \n el ejercito: " + cantidad + " millones de dolares ", width / 2, height / 2);
-    } else
+    } else{
+      fill(255,0,0);
+      textSize(20);
       text("Ponga el iPad horizontal perpendicular al piso", width / 2, height / 2);
+      
+    }
 
     if (mouseX > width - 90 && mouseY > height - 100)
       estado = COMPARACION;
