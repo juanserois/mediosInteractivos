@@ -102,8 +102,8 @@ function draw() {
     text("{Milicias del mundo}", width / 2, height / 4);
     textSize(22);
     text("Cuando pensamos en los ejércitos más grandes y poderosos del mundo \n probablemente pensemos en países como: \n Estados Unidos, China o incluso Brasil en el caso de Latinoamérica. \n Sin embargo sorprende ver que en el ejercito colombiano \n haya un porcentage mayor de la población del país \n y se use un mayor porcentaje del PIB del país para financiarlo.", width / 2, height / 2);
-    textSize(30);
-    text("Toca en cualquier parte para continuar", width / 2, height / 2 + 250);
+    textSize(25);
+    text("Toca en cualquier parte para continuar", width / 2, height - 50);
   }
 
 
@@ -116,8 +116,8 @@ function draw() {
     textSize(25);
     noStroke();
     text("Desplazar el mundo a una bandera para seleccionar un país \n Rotar el iPad  para ver diferente información", width / 2, height / 2 + 150);
-    textSize(30);
-    text("Toca en cualquier parte para continuar", width / 2, height / 2 + 250);
+    textSize(25);
+    text("Toca en cualquier parte para continuar", width / 2, height - 50);
   }
 
 
@@ -134,8 +134,8 @@ function draw() {
     image(usa, xUsa, yUsa);
     image(brazil, xBrazil, yBrazil);
 
-    textSize(30);
-    text("Toca en la flecha para continuar", width / 2, height - 20);
+    textSize(25);
+    text("Toca en la flecha para continuar", width / 2, height - 50);
 
     image(mundo, mouseX - 50, mouseY - 50, 100, 100);
 
