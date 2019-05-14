@@ -234,7 +234,7 @@ function draw() {
       }
       textSize(22);
 
-      text("Gasto total de recursos \n para financiar el ejercito: " + cantidad + " millones de dolares ", width / 2, height / 2)
+      text("Gasto total de recursos para financiar \n el ejercito: " + cantidad + " millones de dolares ", width / 2, height / 2)
     }
 
 
