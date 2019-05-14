@@ -13,6 +13,7 @@ var money;
 
 var right;
 var left;
+var restart;
 
 var xColombia;
 var yColombia;
@@ -26,9 +27,7 @@ var yBrazil;
 var INTRODUCCION = 0;
 var INSTRUCCIONES = 1;
 var INTERACCION = 2;
-var INFORMACION = 3;
-var COMPARACION = 4;
-var REINICIO = 5;
+var COMPARACION = 3;
 
 var COLOMBIA = 0;
 var CHINA = 1;
@@ -53,8 +52,8 @@ function preload() {
   right = loadImage('assets/right.png');
   left = loadImage('assets/left.png');
   money = loadImage('assets/money.png');
+  restart = loadImage('assets/restart.png');
   titulo = loadFont('assets/titulo.ttf');
-
 
 }
 
@@ -240,48 +239,63 @@ function draw() {
 
 
     if (mouseX > width - 90 && mouseY > height - 100)
-      estado = INFORMACION;
+      estado = COMPARACION;
   }
 
 
-  if (estado == INFORMACION) {
+  if (estado == COMPARACION) {
     image(map, 0, 0, width, height);
     background(0, 0, 0, 180);
 
-
-    image(right, width - 90, height - 90, 80, 80);
     image(left, 10, height - 90, 80, 80);
+    image(restart, width - 90, 10, 80, 80);
      var x = "";
+    var y = 0;
+    var z = 0;
+    var m = 0;
+    var n = 0;
     if (pais == COLOMBIA){
       x = "Colombia"
       y = 481100;
       z = 0;
+      m = 8224;
+      n = 0;
     }
     if (pais == USA){
        x = "USA"
       y = 3487400;
       z = 2.58;
+      m = 571616.84
+      n = 0.95;
     }
     if (pais == BRAZIL){
        x = "Brazil"
       y = 2215400;
       z = 3.03;
+      m = 96754.85;
+      n = 2.27;
+
     }
     if (pais == CHINA){
        x = "China"
     y = 14787000;
       z = 5.48;
+      m = 657156.67;
+      n = 1.59
       
     }
 
-    text("Si Colombia tuviera la misma poblacion de " + x + " tendría: " + y + " soldados. \n \n Es decir que tendría un ejército " + z + " veces más grande que " + x, width / 2, height / 2);
+    text("Si Colombia tuviera la misma poblacion de " + x + " tendría: " + y + " soldados. \n \n Es decir que tendría un ejército " + z + " veces más grande que " + x + "\n" + "Si Colombia tuviera la misma economía de " + x + " tendría: " + m + " millones de dólares. \n \n Es decir que tendría un ejército " + n + " veces tan rico como el ejército de " + x, width / 2, height / 2);
     
-    if (mouseX < 90 && mouseY > height - 100)
+    if (mouseX < 90 && mouseY > height - 100){
       estado = INTERACCION;
-
-  }
-
-  if (estado == COMPARACION) {
+      return false;
+    }
+    
+     if (mouseX > width - 90 && mouseY < 100 ){
+      estado = INTRODUCCION;
+       return false;
+     }
 
   }
 
